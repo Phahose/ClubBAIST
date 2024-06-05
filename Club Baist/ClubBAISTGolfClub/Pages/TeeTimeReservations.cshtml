@@ -1,0 +1,120 @@
+﻿@page
+@model ClubBAISTGolfClub.Pages.TeeTimeReservationsModel
+@{
+    Layout = "_Header";
+    ViewData["Title"] = "My Reservations";
+}
+<div class="bookTee">
+    <nav class="memberhome_nav">
+        <ul>
+            <li>
+                <a href="~/MemberHome">My Account</a>
+            </li>
+            @if (Model.Member.MemberApplicationStatus == "Approved")
+            {
+                <li>
+                    <a href="~/BookTeeTime">Tee Times</a>
+                </li>
+                <li>
+                    <a href="~/TeeTimeReservations">Reservations</a>
+                </li>
+                <li>
+                    <a href="/Scores">Rec Scores</a>
+                </li>
+            }
+            @if (Model.Member.MembershipType == "Admin")
+            {
+                <li>
+                    <a href="~/Admin">Admin</a>
+                </li>
+            }
+            @if (Model.Member.MembershipType == "Shareholder")
+            {
+                <li>
+                    <a href="~/ShareHolder">Applicants</a>
+                </li>
+            }
+        </ul>
+    </nav>
+    <div class="infodiv">
+        <h2>My Reservations</h2>
+        <form method="post">
+            <p>@Model.ErrorMessage</p>
+            @foreach (var message in Model.ErrorList)
+            {
+               <p class="error">@message</p> 
+            }
+            <div class="month_form">
+               @*  <input type="number" name="TeeTimeID" placeholder="TeeTimeID" class="updateMember_input" min="0" /> *@
+                <input type="submit" name="Submit" value="Delete Tee Time" class="updateMember_button" />
+                <input type="submit" name="Submit" value="Update Tee Time" class="updateTimebutton" />
+            </div>
+            <table border="1" class="admintable">
+                <tr>
+                    <th>Tee Time ID</th>
+                    <th>MemberID</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Player 1</th>
+                    <th>Player 2</th>
+                    <th>Player 3</th>
+                    <th>Player 4</th>
+                    <th>Reservation Status</th>
+                </tr>
+               
+                @foreach (var teeTime in Model.TeeTimeList)
+                {
+                    <tr>
+                        <td>@teeTime.TeeTimeID</td>
+                        <td>@teeTime.MemberID</td>
+                        <td>@teeTime.Date.ToString("yyyy-MM-dd")</td>
+                        <td>@teeTime.Time</td>
+                        <td>@teeTime.Player1ID</td>
+                        <td>@teeTime.Player2ID</td>
+                        <td>@teeTime.Player3ID</td>
+                        <td>@teeTime.Player4ID</td>
+                        <td>@teeTime.ReservationStatus</td>
+                        <td><input type="radio" name="TeeTimeID" value="@teeTime.TeeTimeID" /></td>
+                    </tr>
+                }
+            </table>
+                @if (Model.TeeTimeList.Count == 0)
+                {
+                    <p class="noreservations">You have No Currently Booked Reservations</p>
+                }
+            <p>@Model.Message</p>
+            @if (Model.DeleteTime == true)
+            {
+                <div class="appointment cancelteeTimeContainer">
+                    <h3>Are You sure you want to Delete This Reservation?</h3>
+                    <input type="text" name="TeeTimeID" value="@Model.TeeTime.TeeTimeID" disabled />
+                    <input type="text" name="Date" value="@Model.TeeTime.Date.ToString("yyyy-MM-dd")" disabled/>
+                    <input type="text" name="Time" value="@Model.TeeTime.Time" disabled/>
+                    <input type="submit" name="Submit" value="Delete" class="deletebutton"/>
+                    <input type="submit" name="Submit" value="Cancel" class="cancelbutton"/>
+                </div>
+            }
+            @if (Model.UpdateTee == true)
+            {
+                <div class="appointment cancelteeTimeContainer">
+                    <label>Tee Time:</label>
+                    <input type="text" name="UpdatingTeeTimeID" value="@Model.TeeTime.TeeTimeID" disabled />
+                    <label>Date:</label>
+                    <input type="date" name="Date" value="@Model.TeeTime.Date.ToString("yyyy-MM-dd")"/>
+                    <label>Time:</label>
+                    <input type="time" name="Time" value="@Model.TeeTime.Time"/>
+                    <label>Player 1 ID:</label>
+                    <input type="text" name="Player1Id" value="@Model.TeeTime.Player1ID"  />
+                    <label>Player 2 ID</label>
+                    <input type="text" name="Player2Id" value="@Model.TeeTime.Player2ID"  />
+                    <label>Player 3 ID</label>
+                    <input type="text" name="Player3Id" value="@Model.TeeTime.Player3ID"  />
+                    <label>Player 4 ID</label>
+                    <input type="text" name="Player4Id" value="@Model.TeeTime.Player4ID"  />
+                    <input type="submit" name="Submit" value="Update" class="deletebutton"/>
+                    <input type="submit" name="Submit" value="Cancel" class="cancelbutton"/>
+                </div>
+            }
+        </form>
+    </div>
+</div>

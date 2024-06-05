@@ -1,0 +1,114 @@
+﻿@page
+@model ClubBAISTGolfClub.Pages.ShareHolderModel
+@{
+    Layout = "_Header";
+    ViewData["Title"] = "My Applicants";
+}
+<div class="bookTee">
+    <nav class="memberhome_nav">
+        <ul>
+            <li>
+                <a href="~/MemberHome">My Account</a>
+            </li>
+            <li>
+                <a href="~/BookTeeTime">Tee Times</a>
+            </li>
+            <li>
+                <a href="~/TeeTimeReservations">Reservations</a>
+            </li>
+            <li>
+                <a href="/Scores">Rec Scores</a>
+            </li>
+            @if (Model.Member.MembershipType == "Shareholder")
+            {
+                <li>
+                    <a href="~/ShareHolder">Applicants</a>
+                </li>
+            }
+        </ul>
+    </nav>
+    <div class="infodiv">
+        <h2 class="heading_admin">People You Sponsor</h2>
+        <form name="UpdateMembers" method="post" class="teetimeForm">
+            <p>@Model.ErrorMessage</p>
+            <div class="month_form">
+                <input type="number" name="ApplicationID" placeholder="Application ID you Would Like To Update" class="updateMember_input" min="0" />
+                <input type="submit" name="Submit" value="Go" class="updateMember_button" />
+            </div>
+            <table border="1" class="admintable">
+                <tr>
+                    <th>Application ID</th>
+                    <th>Appicant ID</th>
+                    <th>Appicant Name</th>
+                    <th>Sponsor1 Name</th>
+                    <th>Sponsor2 Name</th>
+                    <th>Application Status</th>
+                    <th>Date Applied</th>
+                </tr>
+                @foreach (var memberapplication in Model.Applications)
+                {
+                    if (memberapplication.ApplicationStatus == "Pending")
+                    {
+                        byte[] wordDocumentBytes = memberapplication.ApplicationFile!;
+                        string base64Document = Convert.ToBase64String(wordDocumentBytes!);
+                        <tr>
+                            <td>@memberapplication.ApplicationID</td>
+                            <td>@memberapplication.ApplicantID</td>
+                            <td>@memberapplication.ApplicantName</td>
+                            <td>@memberapplication.Sponsor1Name</td>
+                            <td>@memberapplication.Sponsor2Name</td>
+                            <td>@memberapplication.ApplicationStatus</td>
+                            <td>@memberapplication.ApplicationDate.ToString("yyyy-MM-dd")</td>
+                        </tr>
+                    }
+                }
+            </table>
+            @if (Model.ApplicationFound == true)
+            {
+                <div class="appointment updatemember_container">
+                    <h2>Update - @Model.Application.ApplicantName</h2>
+                    @if (Model.Member.MemberID == Model.Application.Sponsor1ID)
+                    {
+                        <label for="Sponsor1Status" class="s-label">Sponsor 1 Status</label>
+                        <select name="Sponsor1Status" class="SignUp_input">
+                            <option value="@Model.Member.MemberSponsor1">@Model.Application.Sponsor1Status</option>
+                            <option value="Pending">Pending</option>
+                            <option value="Approved">Approve</option>
+                            <option value="Reject">Reject</option>
+                        </select>
+
+                        <label for="Sponsor2Status" class="s-label">Sponsor 2 Status</label>
+                        <select name="Sponsor2Status" class="SignUp_input" disabled>
+                            <option value="@Model.Member.MemberSponsor1">@Model.Application.Sponsor2Status</option>
+                            <option value="Pending">Pending</option>
+                            <option value="Approved">Approve</option>
+                            <option value="Reject">Reject</option>
+                        </select>
+                        <br />
+                    }
+                   @if (Model.Member.MemberID == Model.Application.Sponsor2ID)
+                   {
+                        <label for="Sponsor1Status" class="s-label">Sponsor 1 Status</label>
+                        <select name="Sponsor1Status" class="SignUp_input" disabled>
+                            <option value="@Model.Member.MemberSponsor1">@Model.Application.Sponsor1Status</option>
+                            <option value="Pending">Pending</option>
+                            <option value="Approved">Approve</option>
+                            <option value="Reject">Reject</option>
+                        </select>
+
+                        <label for="Sponsor2Status" class="s-label">Sponsor 2 Status</label>
+                        <select name="Sponsor2Status" class="SignUp_input">
+                            <option value="@Model.Member.MemberSponsor1">@Model.Application.Sponsor2Status</option>
+                            <option value="Pending">Pending</option>
+                            <option value="Approved">Approve</option>
+                            <option value="Reject">Reject</option>
+                        </select>
+                        <br />
+                   }              
+                    <p>@Model.Message</p>
+                    <input type="submit" name="Submit" value="UpdateMember" />
+                </div>
+            }
+        </form>
+    </div>
+</div>

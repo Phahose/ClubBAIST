@@ -1,0 +1,144 @@
+﻿@page
+@model ClubBAISTGolfClub.Pages.MemberHomeModel
+@{
+    Layout = "_Header";
+    ViewData["Title"] = "My Account";
+}
+<h2 class="intoh2">Welcome @Model.Member.MemberFirstName</h2>
+
+<div class="memberhome"> 
+    <div>
+        <nav class="memberhome_nav">
+            <ul>
+                <li>
+                    <a href="~/MemberHome">My Account</a>
+                </li>
+                @if (Model.Member.MemberApplicationStatus == "Approved")
+                {
+                    <li>
+                        <a href="~/BookTeeTime">Tee Times</a>
+                    </li>
+                    <li>
+                        <a href="~/TeeTimeReservations">Reservations</a>
+                    </li>
+                    <li>
+                        <a href="/Scores">Rec Scores</a>
+                    </li>
+                }
+                @if (Model.Member.MembershipType == "Admin")
+                {
+                    <li>
+                        <a href="~/Admin">Admin</a>
+                    </li>
+                } 
+                @if (Model.Member.MembershipType == "Shareholder")
+                {
+                    <li>
+                        <a href="~/ShareHolder">Applicants</a>
+                    </li>
+                }
+            </ul>
+        </nav>
+       
+        <div class="infodiv">
+            <form method="post" name="Application" enctype="multipart/form-data">
+                <h2>My Info</h2>
+                <p>Personal Information</p>
+                <p>MemberID: @Model.Member.MemberID</p>
+                @if (Model.Delete == true)
+                {
+                    <div class="dashFlex">
+                        <div>
+                            <input type="submit" name="Submit" value="UpdateAccount" class="updatemem" disabled />
+                            <input type="submit" name="Submit" value="DeleteAccount" class="deletemem" disabled />
+                        </div>
+                        <div>
+                            <p class="title">FirstName</p>
+                            <input type="text" name="FirstName" class="val" value="@Model.Member.MemberFirstName" disabled/>
+
+                            <p class="title">Address</p>
+                            <input type="text" name="Address" class="val" value="@Model.Member.MemberAddress" disabled/>
+
+                            <p class="title">Membership type</p>
+                            <input type="text" name="MembershipType" class="val" value="@Model.Member.MembershipType" disabled />
+
+                            <p class="title">Application Status</p>
+                            <input type="text" name="ApplicationStstus" class="val" value="@Model.Member.MemberApplicationStatus" disabled />
+
+                            <p class="title">Shareholder 1 Approval Status</p>
+                            <input type="text" name="Starholder 1 status" class="val" value="@Model.MemberApplication.Sponsor1Status" disabled />
+
+
+                        </div>
+                        <div>
+                            <p class="title">LastName</p>
+                            <input type="text" name="LastName" class="val" value="@Model.Member.MemberLastName" disabled/>
+
+                            <p class="title">Phone Number</p>
+                            <input type="text" name="PhoneNumber" class="val" value="@Model.Member.MemberPhoneNumber" disabled/>
+
+                            <p class="title">Email Address</p>
+                            <input type="text" name="Email" class="val" value="@Model.Member.MemberEmail" disabled/>
+
+                            <p class="title">Shareholder 2 Approval Status</p>
+                            <input type="text" name="Starholder 2 status" class="val" value="@Model.MemberApplication.Sponsor2Status" disabled />
+
+                        </div>
+
+                    </div>
+                }
+                else
+                {
+                    <div class="dashFlex">
+                        <div>
+                            <input type="submit" name="Submit" value="UpdateAccount" class="updatemem" />
+                            <input type="submit" name="Submit" value="DeleteAccount" class="deletemem" />
+                        </div>
+                        <div>
+                            <p class="title">FirstName</p>
+                            <input type="text" name="FirstName" class="val" value="@Model.Member.MemberFirstName" />
+
+                            <p class="title">Address</p>
+                            <input type="text" name="Address" class="val" value="@Model.Member.MemberAddress" />
+
+                            <p class="title">Membership type</p>
+                            <input type="text" name="MembershipType" class="val" value="@Model.Member.MembershipType" disabled />
+
+                            <p class="title">Application Status</p>
+                            <input type="text" name="ApplicationStstus" class="val" value="@Model.Member.MemberApplicationStatus" disabled />
+
+                            <p class="title">Shareholder 1 Approval Status</p>
+                            <input type="text" name="Starholder 1 status" class="val" value="@Model.MemberApplication.Sponsor1Status" disabled />
+
+                        </div>
+                        <div>
+                            <p class="title">LastName</p>
+                            <input type="text" name="LastName" class="val" value="@Model.Member.MemberLastName" />
+
+                            <p class="title">Phone Number</p>
+                            <input type="text" name="PhoneNumber" class="val" value="@Model.Member.MemberPhoneNumber" />
+
+                            <p class="title">Email Address</p>
+                            <input type="text" name="Email" class="val" value="@Model.Member.MemberEmail" />
+
+                            <p class="title">Shareholder 2 Approval Status</p>
+                            <input type="text" name="Starholder 2 status" class="val" value="@Model.MemberApplication.Sponsor2Status" disabled />
+                        </div>
+
+                    </div>
+                }
+                
+                @if (Model.Delete == true)
+                {
+                    <div class="appointment notif">
+                        <h3>Are You sure you want to Delete Your Account</h3>
+                        <div>
+                            <input type="submit" name="Submit" value="Delete" class="deletebutton" />
+                            <input type="submit" name="Submit" value="Cancel" class="cancelbutton" />
+                        </div> 
+                    </div>
+                }
+            </form>
+        </div>
+    </div>  
+</div>

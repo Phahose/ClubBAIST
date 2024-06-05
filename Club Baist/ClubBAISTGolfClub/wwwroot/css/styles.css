@@ -1,0 +1,861 @@
+﻿body {
+    background-color: #141413;
+}
+.intro {
+    position: absolute;
+    background-image: url("/img/golfmen.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    height: 100vh;
+    top: 0%;
+    bottom: 100%;
+    left:0%;
+    right:0%;
+}
+h1 {
+    color: white;
+    font-family: Didot, serif;
+    font-size: 2rem;
+    font-weight:100;
+    max-width: 35rem;
+}
+.intro p {
+    color: white;
+}
+.intro a{
+    text-decoration:none;
+    color:aliceblue;
+    border: 1px solid;
+    padding: 1rem;
+    width: 10rem;
+    margin-top: 1rem;
+
+}
+    .intro a:hover{
+        background-color: antiquewhite;
+        width: 12rem;
+        color: black;
+        transition: 0.5s ease-in-out
+    }
+.introsec {
+    margin-right: 1rem;
+    padding: 2rem;
+    margin-left: auto;
+    margin-top: 15rem;
+    width: fit-content;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 2%;
+}
+.introsec>div{
+    display: flex;
+    flex-flow:column;
+    margin-left: 4rem;
+    width: 15rem;
+}
+.transition-fade {
+    animation: transitionright 1.5s;
+    transform-origin: right;
+}
+
+.transition-fade-down {
+    animation: transitionIn 1.5s;
+    transform-origin: left;
+}
+
+@keyframes transitionIn {
+    from {
+        opacity: 1;
+        transform: translateY(-50%);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes transitionright {
+    from {
+        opacity: 1;
+        transform: translateX(50%);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/*Sign Up*/
+.contain {
+    display: flex;
+    flex-flow: column;
+    height: 100vh;
+    background-image: url("/img/coursegolf.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    top: 0%;
+    bottom: 100%;
+    left: 0%;
+    right: 0%;
+}
+
+.signup {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: fit-content;
+    max-width: 50%;
+    border-radius: 2%;
+}
+
+.signupform {
+    max-width: 30%;
+    width: 38%;
+    border: 2px solid;
+    border-color: antiquewhite;
+    border-radius: 2%;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.signup_message{
+    color: white;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: green;
+    border-radius: 2%;
+}
+h2 {
+    color: white;
+    font-family: Didot, serif;
+    font-size: 2rem;
+    font-weight: 100;
+    max-width: 35rem;
+    width: fit-content;
+    margin: auto;
+}
+
+.flex {
+    display: flex;
+    flex-flow: row;
+}
+
+.flexform {
+    max-width: 60%;
+}
+.formflex {
+    display: block;
+    justify-content: space-between;
+}
+
+.apply-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid #3498db;
+    background-color: #ffffff;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+    .apply-button:hover {
+        background-color: antiquewhite;
+        color: black;
+        transition: 0.5s ease-in-out
+    }
+
+.SignUp_input{
+    padding: 12px 1rem;
+    margin: 6px 0rem;
+    border: 1px solid powderblue;
+    border-radius: 5px;
+    box-sizing: border-box;
+    max-width: 5rem;
+}
+
+label {
+    color: white;
+}
+
+/*login Page*/
+.login-container {
+    position: absolute;
+    background-image: url("/img/golfcourse.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    height: 100vh;
+    top: 0%;
+    bottom: 100%;
+    left: 0%;
+    right: 0%;
+}
+.login-page{
+    justify-content:center;
+    height: 100vh;
+    display:flex;
+}
+.login-page > h2 {
+    display: none;
+}
+
+.loginform {
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    margin: auto;
+}
+
+.input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ffffff; /* White border */
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+select{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ffffff; /* White border */
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+.button {
+    background-color: #ffffff; /* White background */
+    color: #000000; /* Black text color */
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+    .button:hover {
+        background-color: #cccccc; /* Light gray background on hover */
+    }
+
+.alert_error{
+    background-color: red;
+    color: white;
+    padding: 1rem;
+    width: fit-content;
+    margin: auto;
+    border-radius: 10px;
+}
+/*Header*/
+.hbody {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f3f2;
+
+}
+    .hbody img{
+        border-radius: 60%;
+        max-width: 60px;
+        margin:auto;
+        background-color: rebeccapurple;
+    }
+
+    .hbody header {
+        padding: 1rem;
+        margin-bottom: 4rem;
+        height: 5rem;
+        background-color: #fff;
+        box-shadow: 0px 4px 6px -2px rgba(0, 0, 0, 0.5);
+        position:fixed;
+        top: 0;
+        width: 100vw;
+    }
+    .hbody header > nav{
+       margin:auto;
+       width:fit-content;
+       padding-bottom: 2rem;
+       margin-bottom: 2rem;
+    }
+
+.logo {
+    max-width: 150px;
+    margin-bottom: 20px;
+}
+    .memberhome_nav a {
+        color: black;
+        text-decoration: none;
+        padding: 10px 20px;
+        margin: 0 10px;
+        font-size: 15px;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-family: 'Khand', sans-serif;
+    }
+.memberhome_nav a:hover {
+    background-color: rgba(0, 0, 255, 0.5);
+    transition: 0.2s ease-in-out;
+    border-radius: 5%;
+}
+.memberhome_nav ul {
+    list-style: none;
+    height: fit-content;
+    display:flex;
+    flex-flow:column;
+    justify-content: space-between;
+}
+.memberhome_nav li {
+    margin-bottom: 2rem; 
+}
+
+    .hnav a {
+        color: black;
+        text-decoration: none;
+        padding: 10px 20px;
+        margin: 0 10px;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: color 0.3s ease;
+    }
+
+        .hnav a:hover {
+            color: #ffd700; 
+        }
+.memberhome {
+    background-color: #fff;
+    height: 100vh;
+    /*border-radius: 1%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);*/
+}
+.dashFlex {
+    display: flex;
+    width: 85%;
+    margin: auto;
+    justify-content: space-between;
+    border-top: 2px solid lightgrey;
+    border-bottom: 2px solid lightgrey;
+}
+.memberhome > div {
+    display: flex;
+}
+    .memberhome > div > nav {
+        background-color: #f7f3f2;
+        height: 100vh;
+        width: 30rem;
+    }
+.intoh2 {
+    color: black;
+    font-family: 'Khand', sans-serif;
+    margin: 2rem;
+    font-size: 3rem;
+    margin-top: 12rem;
+}
+.infodiv {
+    padding: 2rem;
+    width: 100%;
+    border-radius: 2%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    min-height: 70%;
+    height:fit-content;
+}
+    .infodiv p{
+        font-family: 'Khand', sans-serif;
+    }
+    .title{
+        font-weight: bold;
+    }
+.val {
+    background-color: #f7f3f2;
+    padding: 1rem;
+    width: 15rem;
+    border-radius: 2%;
+    border: 1px solid grey;
+}
+    .infodiv p:first-of-type{
+        font-weight: bold;
+    }
+    .infodiv h2 {
+        color: black;
+        font-family: 'Khand', sans-serif;
+        margin: 0rem;
+        font-weight: bold;
+    }
+.infodiv > div {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 3rem;
+    border-top: 2px solid lightgrey;
+    margin-bottom: 16rem;
+    border-bottom: 2px solid lightgrey;
+}
+        .infodiv > div > div{
+            width: 30%;
+
+        }
+.updatemem {
+    width: 100%;
+    color: black;
+    transition: 0.2s ease-in-out;
+    border: 2px solid darkblue;
+    margin-top: 1rem;
+}
+.deletemem {
+    width: 100%;
+    color: black;
+    transition: 0.2s ease-in-out;
+    border: 2px solid darkred;
+}
+    .deletemem:hover {
+        background-color: darkred;
+        color: white;
+    }
+    .updatemem:hover {
+        background-color: darkblue;
+        color: white;
+    }
+.notif {
+    position: absolute;
+    top: 25%;
+    bottom: 0;
+    max-width: 40rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 40%;
+    left: 45%;
+    padding: 15rem;
+    display:flex;
+    flex-flow: column;
+    justify-content: center;
+}
+.notif h3{
+    color: white;
+    width:fit-content;
+    margin-left:auto;
+    margin-right:auto;
+    font-size: medium;
+}
+.notif div{
+    display:flex;
+    width: 50%;
+    margin-left: auto;
+    margin-right:auto
+}
+.notif .deletebutton{
+    width: 30%;
+    margin-left:auto;
+    margin-right:auto;
+}
+.notif .cancelbutton {
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*Book Tee Time*/
+.bookTee {
+    padding-top: 10rem;
+    height: 100vh;
+    display: flex;
+}
+.infodivs {
+    padding: 2rem;
+    width: 100%;
+    border-radius: 2%;
+    height: fit-content;
+    margin-left:auto;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+.teeTimesh2 {
+    color: black;
+    font-family: 'Khand', sans-serif;
+    font-size: 3rem;
+    margin-top: 12rem;
+}
+.teetimeForm{
+    height: fit-content;
+    display: flex;
+    flex-flow: column;
+    margin-bottom: 2rem;
+}
+.month_form {
+    display: flex;
+    width: 20%;
+    margin: auto;
+}
+.month_form > input[type=submit]{
+    width: fit-content;
+    margin-left: 1rem;
+    /*background-color: brown;*/
+    color: white;
+}
+.bookDatebutton {
+    width: 30%;
+    margin-left: 50rem;
+    background-color: brown;
+    color: white;
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    transition: 0.5s ease-in-out;
+}
+    .bookDatebutton:hover{
+        color: black;
+        background-color: antiquewhite;
+    }
+    .month_form > input[type=submit]:hover {
+        background-color: saddlebrown;
+        transition: 0.5s ease-in-out;
+    }
+.bookingtable {
+    border-collapse: collapse;
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.bookingtable th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    color: black;
+}
+
+.bookingtable th {
+    background-color: #f2f2f2;
+}
+
+.bookingtable td {
+    cursor: pointer;
+}
+
+    .bookingtable td:hover {
+        background-color: grey;
+    }
+.appointment{
+    border: 2px solid lightgrey;
+    width: 50%;
+    margin: auto;
+    padding: 1rem;
+}
+.playerbutton {
+    background-color: brown;
+    color: white;
+    transition: 0.2s ease-in-out;
+}
+    .playerbutton:hover {
+        color: black;
+        background-color: antiquewhite;
+    }
+.error{
+    color: red;
+    font-weight: 500;
+}
+.past_date{
+    width: fit-content;
+    margin: auto;
+    padding-top: 1rem;
+}
+/*Admin Page*/
+.admintable {
+    width: 90%;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+.admintable th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.admintable th {
+    background-color: #f2f2f2;
+}
+
+.admintable tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+.heading_admin{
+    padding: 1rem;
+}
+.updatemember_container{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+}
+.updateMember_button {
+    background-color: brown;
+}
+.updatemember_container> input[type=submit]{
+    background-color: brown;
+    color: white;
+}
+.updatemember_container > h2 {
+    padding: 1rem;
+    width: fit-content;
+    margin: auto;
+}
+.updatemember_container > input[type=submit]:hover {
+    background-color: saddlebrown;
+    transition: 0.2s ease-in-out;
+}
+/*Reservation */
+.noreservations{
+    width: fit-content;
+    margin: auto;
+    margin-top: 1rem;
+}
+.cancelbutton{
+    background-color: cadetblue;
+    color: white;
+}
+.deletebutton {
+    background-color: brown;
+    color: white;
+}
+.cancelteeTimeContainer {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+}
+.deletebutton:hover {
+
+    background-color: saddlebrown;
+    transition: 0.2s ease-in-out;
+}
+.cancelbutton:hover {
+ 
+    background-color: cornflowerblue;
+    transition: 0.2s ease-in-out;
+}
+label{
+    color: black;
+}
+/*GolF Score Card*/
+.score_card{
+    display:flex;
+    width: 100%;
+    margin-right:auto;
+    margin-left:auto;
+}
+.score_players {
+    width: 40%;
+    border: 2px solid lightgrey;
+    margin-right: auto;
+    padding: 1rem;
+    height:fit-content;
+}
+.score_players_info{
+    display:flex;
+    justify-content:space-between;
+    padding: .5rem;
+}
+.cards {
+    padding: 1rem;
+    max-height: 40rem;
+    overflow-y: scroll;
+    width: 50%;
+}
+.cards table{
+    width: 100%;
+    margin-bottom: 2rem;
+}
+.score_players_info input[type=number] {
+    width: 90%;
+}
+.separation  {
+    width: 90%;
+}
+
+/* Customize the scrollbar track */
+.cards::-webkit-scrollbar {
+   
+}
+
+/* Customize the scrollbar handle (thumb) */
+.cards::-webkit-scrollbar-thumb {
+    background-color: gainsboro; /* Adjust the color as needed */
+}
+
+/* Customize the scrollbar handle on hover */
+.cards::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+.save-button {
+    padding: 8px 0PX;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: #fff;
+    width: 18%;
+    margin-bottom: 1rem;
+}
+
+    .save-button:hover {
+        background-color: #45a049;
+    }
+
+    .post-button {
+    padding: 8px 5px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: brown; 
+    color: #fff; 
+    width: fit-content;
+}
+
+
+    .post-button:hover {
+        background-color: #400613; 
+    }
+.date_input{
+    width: 50%;
+    display: flex;
+    height: fit-content;
+}
+.date_input input[type=submit]{
+    margin-left: 2rem;
+    width: fit-content;
+}
+.date_input input[type=date]{
+    width: 50%;
+}
+h4 {
+    margin-top: 2.5rem;
+    border-bottom: 1px solid grey;
+}
+@media (min-width: 760px) {
+}
+
+@media(min-width: 1000px){
+    .contain{
+        display:flex;
+        flex-flow:column;
+        height:100vh
+    }
+    .signup {
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        width:90%;
+        max-width: 90%;
+        border-radius: 2%;
+    }
+    .signupform {
+        width: 100%;
+        border: 2px solid;
+        border-color:antiquewhite;
+        border-radius: 2%;
+        padding: 2rem;
+    }
+
+    h2 {
+        color: white;
+        font-family: Didot, serif;
+        font-size: 2rem;
+        font-weight: 100;
+        max-width: 35rem;
+        width: fit-content;
+        margin: auto;
+    }
+    .flex {
+        display: flex;
+        flex-flow: row;
+    }
+    .flexform {
+
+        max-width: 60%;
+    }
+    .formflex {
+        display: flex;
+        justify-content:space-between;
+    }
+    input[type=text] {
+        padding: 12px 10px;
+    }
+    .SignUp_input{
+        max-width: 17rem;
+    }
+    .apply-button {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        border: 2px solid #3498db;
+        background-color: #ffffff;
+        border-radius: 5px;
+        transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    }
+
+        .apply-button:hover {
+            background-color: antiquewhite;
+            color: black;
+            transition: 0.5s ease-in-out
+        }
+
+/*Login*/
+    .login-page{
+        display:flex;
+        height:100vh;
+    }
+    .login-page > h2{
+        display: revert;
+        font-size: 5rem;
+        border-right: 2px solid;
+    }
+    .loginform {
+        justify-content: center;
+        align-items: center;
+        width: 30%;
+        margin: auto;
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ffffff; /* White border */
+        border-radius: 3px;
+        box-sizing: border-box;
+
+    }
+
+    .button {
+        background-color: #ffffff; /* White background */
+        color: #000000; /* Black text color */
+        padding: 10px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+        .button:hover {
+            background-color: #cccccc; /* Light gray background on hover */
+        }
+}
+/*ShareHolder*/
+.s-label{
+    color: black;
+}
+.updateTimebutton{
+    background-color: cadetblue;
+}
